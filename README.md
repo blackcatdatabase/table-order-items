@@ -66,8 +66,8 @@ erDiagram
     DECIMAL(5,2) tax_rate
     CHAR(3) currency
   }
-  ORDER_ITEMS }o--|| BOOKS : (book_id)
-  ORDER_ITEMS }o--|| ORDERS : (order_id)
+  ORDER_ITEMS }o--|| BOOKS : "book_id"
+  ORDER_ITEMS }o--|| ORDERS : "order_id"
 ```
 
 ## Indexes
