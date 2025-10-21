@@ -1,0 +1,18 @@
+-- Auto-generated from schema-map.psd1 on 2025-10-21T02:32:05
+-- table: order_items
+CREATE TABLE IF NOT EXISTS order_items (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  order_id BIGINT UNSIGNED NULL,
+  book_id BIGINT UNSIGNED NULL,
+  product_ref INT NULL,
+  title_snapshot VARCHAR(255) NOT NULL,
+  sku_snapshot VARCHAR(64) NULL,
+  unit_price DECIMAL(12,2) NOT NULL,
+  quantity INT UNSIGNED NOT NULL,
+  tax_rate DECIMAL(5,2) NOT NULL,
+  currency CHAR(3) NOT NULL,
+  INDEX idx_order_items_order_id (order_id),
+  INDEX idx_order_items_book_id (book_id),
+  CONSTRAINT chk_order_items_qty CHECK (quantity > 0),
+  CONSTRAINT chk_order_items_currency CHECK (currency REGEXP ''^[A-Z]{3}$'')
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
