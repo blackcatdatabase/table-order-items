@@ -14,5 +14,5 @@ CREATE TABLE IF NOT EXISTS order_items (
   INDEX idx_order_items_order_id (order_id),
   INDEX idx_order_items_book_id (book_id),
   CONSTRAINT chk_order_items_qty CHECK (quantity > 0),
-  CONSTRAINT chk_order_items_currency CHECK (currency REGEXP ''^[A-Z]{3}$'')
+  CONSTRAINT chk_order_items_currency CHECK (currency REGEXP '^[A-Z]{3}$')
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
