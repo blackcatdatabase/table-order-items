@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace BlackCat\Database\Packages\OrderItems\Service;
 
-use BlackCat\Core\Database\Database;
+use BlackCat\Core\Database;
 use BlackCat\Database\Packages\OrderItems\Dto\OrderItemDto;
 use BlackCat\Database\Packages\OrderItems\Mapper\OrderItemDtoMapper;
 use BlackCat\Database\Packages\OrderItems\Repository\OrderItemRepository;
