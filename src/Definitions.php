@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\OrderItems;
 final class Definitions {
     // --- základní metadata ---
     public static function table(): string { return 'order_items'; }
-    public static function contractView(): string { return 'v_order_items_contract'; }
+    public static function contractView(): string { return 'vw_order_items'; }
     /** @return string[] */
     public static function columns(): array { return [ 'id', 'order_id', 'book_id', 'product_ref', 'title_snapshot', 'sku_snapshot', 'unit_price', 'quantity', 'tax_rate', 'currency' ]; }
     public static function pk(): string { return 'id'; }
