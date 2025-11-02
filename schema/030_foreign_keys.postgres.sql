@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.psd1 (map@c5e4097)
+-- Auto-generated from schema-map-postgres.psd1 (map@db2f8b8)
 -- engine: postgres
 -- table:  order_items
 ALTER TABLE order_items ADD CONSTRAINT fk_order_items_order FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE;
