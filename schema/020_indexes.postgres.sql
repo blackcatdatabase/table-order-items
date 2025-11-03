@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.psd1 (map@db2f8b8)
+-- Auto-generated from schema-map-postgres.psd1 (map@9d3471b)
 -- engine: postgres
 -- table:  order_items
 CREATE INDEX IF NOT EXISTS idx_order_items_order_id ON order_items (order_id);
