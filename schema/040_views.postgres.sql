@@ -5,6 +5,7 @@
 CREATE OR REPLACE VIEW vw_order_items AS
 SELECT
   id,
+  tenant_id,
   order_id,
   book_id,
   product_ref,

@@ -5,6 +5,7 @@
 CREATE OR REPLACE ALGORITHM=MERGE SQL SECURITY INVOKER VIEW vw_order_items AS
 SELECT
   id,
+  tenant_id,
   order_id,
   book_id,
   product_ref,
