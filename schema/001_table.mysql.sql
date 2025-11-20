@@ -1,8 +1,9 @@
--- Auto-generated from schema-map-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-map-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  order_items
 CREATE TABLE IF NOT EXISTS order_items (
   id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  tenant_id BIGINT UNSIGNED NOT NULL,
   order_id BIGINT UNSIGNED NULL,
   book_id BIGINT UNSIGNED NULL,
   product_ref INT NULL,
@@ -14,6 +15,8 @@ CREATE TABLE IF NOT EXISTS order_items (
   currency CHAR(3) NOT NULL,
   INDEX idx_order_items_order_id (order_id),
   INDEX idx_order_items_book_id (book_id),
+  INDEX idx_order_items_tenant_order (tenant_id, order_id),
+  INDEX idx_order_items_tenant_book (tenant_id, book_id),
   CONSTRAINT chk_order_items_qty CHECK (quantity > 0),
   CONSTRAINT chk_order_items_currency CHECK (currency REGEXP '^[A-Z]{3}$')
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
