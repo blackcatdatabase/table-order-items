@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-mysql.yaml (map@94ebe6c)
+-- Auto-generated from schema-views-mysql.yaml (map@4ae85c5)
 -- engine: mysql
 -- table:  order_items
 
@@ -15,5 +15,7 @@ SELECT
   unit_price,
   quantity,
   tax_rate,
-  currency
+  currency,
+  created_at,
+  updated_at
 FROM order_items;

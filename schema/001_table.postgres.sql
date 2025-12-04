@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.yaml (map@94ebe6c)
+-- Auto-generated from schema-map-postgres.yaml (map@4ae85c5)
 -- engine: postgres
 -- table:  order_items
 
@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS order_items (
   quantity INTEGER NOT NULL,
   tax_rate NUMERIC(5,2) NOT NULL,
   currency CHAR(3) NOT NULL,
+  created_at TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  updated_at TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   CONSTRAINT chk_order_items_qty CHECK (quantity > 0),
   CONSTRAINT chk_order_items_currency CHECK (currency ~ '^[A-Z]{3}$'),
   CONSTRAINT chk_order_items_tax_rate CHECK (tax_rate BETWEEN 0 AND 100),

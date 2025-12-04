@@ -46,7 +46,9 @@ SELECT
   unit_price,
   quantity,
   tax_rate,
-  currency
+  currency,
+  created_at,
+  updated_at
 FROM order_items;
 SQL;
         } else {
@@ -63,7 +65,9 @@ SELECT
   unit_price,
   quantity,
   tax_rate,
-  currency
+  currency,
+  created_at,
+  updated_at
 FROM order_items;
 SQL;
         }

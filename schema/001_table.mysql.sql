@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-mysql.yaml (map@94ebe6c)
+-- Auto-generated from schema-map-mysql.yaml (map@4ae85c5)
 -- engine: mysql
 -- table:  order_items
 
@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS order_items (
   quantity INT UNSIGNED NOT NULL,
   tax_rate DECIMAL(5,2) NOT NULL,
   currency CHAR(3) NOT NULL,
+  created_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  updated_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
   INDEX idx_order_items_order_id (order_id),
   INDEX idx_order_items_book_id (book_id),
   INDEX idx_order_items_tenant_order (tenant_id, order_id),

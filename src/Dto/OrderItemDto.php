@@ -20,7 +20,9 @@ final class OrderItemDto implements \JsonSerializable {
         public readonly string $unitPrice,
         public readonly int $quantity,
         public readonly string $taxRate,
-        public readonly string $currency
+        public readonly string $currency,
+        public readonly \DateTimeImmutable $createdAt,
+        public readonly \DateTimeImmutable $updatedAt
     ) {}
 
     /** Suitable for serialization/logging (without large blobs). */
