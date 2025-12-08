@@ -9,12 +9,12 @@ Normalized order line items (snapshotted data).
 | currency | CHAR(3) | NO |  | ISO 4217 currency code. |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | order_id | BIGINT | YES |  | Order (FK orders.id). |
-| product_ref | INTEGER | YES |  | External product reference (optional). |
-| quantity | INTEGER | NO |  | Quantity (> 0). |
+| product_ref | INT | YES |  | External product reference (optional). |
+| quantity | INT | NO |  | Quantity (> 0). |
 | sku_snapshot | VARCHAR(64) | YES |  | Captured SKU at purchase time. |
-| tax_rate | NUMERIC(5,2) | NO |  | Tax rate % (0..100). |
+| tax_rate | DECIMAL(5,2) | NO |  | Tax rate % (0..100). |
 | title_snapshot | VARCHAR(255) | NO |  | Captured title at purchase time. |
-| unit_price | NUMERIC(12,2) | NO |  | Unit price at purchase. |
+| unit_price | DECIMAL(12,2) | NO |  | Unit price at purchase. |
 
 ## Engine Details
 
@@ -69,7 +69,7 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_order_items | mysql | algorithm=MERGE, security=INVOKER | [packages\order-items\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/order-items/schema/040_views.mysql.sql) |
-| vw_order_items_detailed | mysql | algorithm=TEMPTABLE, security=INVOKER | [packages\order-items\schema\040_views_joins.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/order-items/schema/040_views_joins.mysql.sql) |
-| vw_order_items | postgres |  | [packages\order-items\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/order-items/schema/040_views.postgres.sql) |
-| vw_order_items_detailed | postgres |  | [packages\order-items\schema\040_views_joins.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/order-items/schema/040_views_joins.postgres.sql) |
+| vw_order_items | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_order_items_detailed | mysql | algorithm=TEMPTABLE, security=INVOKER | [schema\040_views_joins.mysql.sql](schema\040_views_joins.mysql.sql) |
+| vw_order_items | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
+| vw_order_items_detailed | postgres |  | [schema\040_views_joins.postgres.sql](schema\040_views_joins.postgres.sql) |
