@@ -9,12 +9,12 @@ Normalized order line items (snapshotted data).
 | currency | CHAR(3) | NO |  | ISO 4217 currency code. |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | order_id | BIGINT | YES |  | Order (FK orders.id). |
-| product_ref | INT | YES |  | External product reference (optional). |
-| quantity | INT | NO |  | Quantity (> 0). |
+| product_ref | mysql: INT / postgres: INTEGER | YES |  | External product reference (optional). |
+| quantity | mysql: INT / postgres: INTEGER | NO |  | Quantity (> 0). |
 | sku_snapshot | VARCHAR(64) | YES |  | Captured SKU at purchase time. |
-| tax_rate | DECIMAL(5,2) | NO |  | Tax rate % (0..100). |
+| tax_rate | mysql: DECIMAL(5,2) / postgres: NUMERIC(5,2) | NO |  | Tax rate % (0..100). |
 | title_snapshot | VARCHAR(255) | NO |  | Captured title at purchase time. |
-| unit_price | DECIMAL(12,2) | NO |  | Unit price at purchase. |
+| unit_price | mysql: DECIMAL(12,2) / postgres: NUMERIC(12,2) | NO |  | Unit price at purchase. |
 
 ## Engine Details
 
