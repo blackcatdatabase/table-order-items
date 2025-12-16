@@ -41,11 +41,11 @@ final class Criteria extends BaseCriteria
         return [ 'title_snapshot', 'sku_snapshot', 'currency' ];
     }
 
-/** Columns allowed in ORDER BY (falls back to filterable() when empty). */
-protected function sortable(): array
-{
-    return [ 'id', 'tenant_id', 'order_id', 'book_id', 'product_ref', 'title_snapshot', 'sku_snapshot', 'unit_price', 'quantity', 'tax_rate', 'currency', 'created_at', 'updated_at' ];
-}
+    /** Columns allowed in ORDER BY (falls back to filterable() when empty). */
+    protected function sortable(): array
+    {
+        return [ 'id', 'tenant_id', 'order_id', 'book_id', 'product_ref', 'title_snapshot', 'sku_snapshot', 'unit_price', 'quantity', 'tax_rate', 'currency', 'created_at', 'updated_at' ];
+    }
 
     /**
      * Whitelist of joinable entities (for safe ->join() usage):
