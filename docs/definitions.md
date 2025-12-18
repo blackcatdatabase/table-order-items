@@ -3,18 +3,21 @@
 Normalized order line items (snapshotted data).
 
 ## Columns
-| Column | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| order_id | BIGINT | YES |  | Order (FK orders.id). |
-| book_id | BIGINT | YES |  | Book (FK books.id), optional for non-book items. |
-| product_ref | mysql: INT / postgres: INTEGER | YES |  | External product reference (optional). |
-| title_snapshot | VARCHAR(255) | NO |  | Captured title at purchase time. |
-| sku_snapshot | VARCHAR(64) | YES |  | Captured SKU at purchase time. |
-| unit_price | mysql: DECIMAL(12,2) / postgres: NUMERIC(12,2) | NO |  | Unit price at purchase. |
-| quantity | mysql: INT / postgres: INTEGER | NO |  | Quantity (> 0). |
-| tax_rate | mysql: DECIMAL(5,2) / postgres: NUMERIC(5,2) | NO |  | Tax rate % (0..100). |
-| currency | CHAR(3) | NO |  | ISO 4217 currency code. |
+| Column | Type | Null | Default | Description | Crypto |
+| --- | --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |  |
+| tenant_id | BIGINT | NO |  | Owning tenant (FK tenants.id). |  |
+| order_id | BIGINT | YES |  | Order (FK orders.id). |  |
+| book_id | BIGINT | YES |  | Book (FK books.id), optional for non-book items. |  |
+| product_ref | mysql: INT / postgres: INTEGER | YES |  | External product reference (optional). |  |
+| title_snapshot | VARCHAR(255) | NO |  | Captured title at purchase time. |  |
+| sku_snapshot | VARCHAR(64) | YES |  | Captured SKU at purchase time. |  |
+| unit_price | mysql: DECIMAL(12,2) / postgres: NUMERIC(12,2) | NO |  | Unit price at purchase. |  |
+| quantity | mysql: INT / postgres: INTEGER | NO |  | Quantity (> 0). |  |
+| tax_rate | mysql: DECIMAL(5,2) / postgres: NUMERIC(5,2) | NO |  | Tax rate % (0..100). |  |
+| currency | CHAR(3) | NO |  | ISO 4217 currency code. |  |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |
+| updated_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Update timestamp (UTC). |  |
 
 ## Engine Details
 
