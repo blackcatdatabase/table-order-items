@@ -1,0 +1,47 @@
+{
+  "tables": {
+    "order_items": {
+      "columns": {
+        "book_id": {
+          "strategy": "passthrough"
+        },
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "currency": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "order_id": {
+          "strategy": "passthrough"
+        },
+        "product_ref": {
+          "strategy": "passthrough"
+        },
+        "quantity": {
+          "strategy": "passthrough"
+        },
+        "sku_snapshot": {
+          "strategy": "passthrough"
+        },
+        "tax_rate": {
+          "strategy": "passthrough"
+        },
+        "tenant_id": {
+          "strategy": "passthrough"
+        },
+        "title_snapshot": {
+          "strategy": "passthrough"
+        },
+        "unit_price": {
+          "strategy": "passthrough"
+        },
+        "updated_at": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
